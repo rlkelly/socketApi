@@ -71,16 +71,17 @@ def index():
 
 class Assets(Resource):
     def get(self):
-        assets = {"assets":[{"deviceID":1, "id":1, "isActive":true, "name":"Jim", "type":"Personnel", "metadata":{"assetClass": "Welder", "classification": "Welder", "age": 35, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
-                            {"deviceID":2, "id":2, "isActive":true, "name":"Jeb", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Foreman", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":15, "taskOrder":12345, "phone": "234-234-4595" }},
-                            {"deviceID":3, "id":3, "isActive":true, "name":"Bob", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Geologist", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
-                            {"deviceID":4, "id":4, "isActive":true, "name":"#345345", "type":"Material", "metadata":{"assetClass": "Piping", "classification": "Piping", "details":"Black steel ASTM A53, Grade B, seamless, Schedule 40 with threaded ends", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}},
-                            {"deviceID":5, "id":5, "isActive":true, "name":"ID# 544", "type":"Vehicle", "metadata":{"assetClass": "Vehicle", "classification": "Forklift", "model":"H800-1050HDS", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}}]}
+        assets = {"assets":[{"deviceID":1, "id":1, "isActive":True, "name":"Jim", "type":"Personnel", "metadata":{"assetClass": "Welder", "classification": "Welder", "age": 35, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":2, "id":2, "isActive":True, "name":"Jeb", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Foreman", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":15, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":3, "id":3, "isActive":True, "name":"Bob", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Geologist", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":4, "id":4, "isActive":True, "name":"#345345", "type":"Material", "metadata":{"assetClass": "Piping", "classification": "Piping", "details":"Black steel ASTM A53, Grade B, seamless, Schedule 40 with threaded ends", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}},
+                            {"deviceID":5, "id":5, "isActive":True, "name":"ID# 544", "type":"Vehicle", "metadata":{"assetClass": "Vehicle", "classification": "Forklift", "model":"H800-1050HDS", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}}]}
         return assets
 
 class Buildings(Resource):
     def get(self):
         buildings = {"buildings":[{"id":1, "name":"Tengiz Field"}]}
+        return buildings
 
 class Floors(Resource):
     def get(self):
