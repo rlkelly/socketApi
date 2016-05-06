@@ -4,6 +4,9 @@ $(document).ready(function(){
     // the socket.io documentation recommends sending an explicit package upon connection
     // this is specially important when using the global namespace
     var socket = io.connect('http://' + document.domain + ':' + location.port + namespace);
+    console.log(socket);
+    console.log(document.domain);
+    console.log(location.port);
 
     // event handler for server sent data
     // the data is displayed in the "Received" section of the page
