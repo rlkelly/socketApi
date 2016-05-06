@@ -69,11 +69,33 @@ def index():
     return render_template('index.html')
 
 
-class HelloWorld(Resource):
+class Assets(Resource):
     def get(self):
-        return {'hello': 'world'}
+        assets = {"assets":[{"deviceID":1, "id":1, "isActive":true, "name":"Jim", "type":"Personnel", "metadata":{"assetClass": "Welder", "classification": "Welder", "age": 35, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":2, "id":2, "isActive":true, "name":"Jeb", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Foreman", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":15, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":3, "id":3, "isActive":true, "name":"Bob", "type":"Personnel", "metadata":{"assetClass": "Foreman", "classification": "Geologist", "age": 45, "inDate":"2015-04-23T18:25:43.511Z", "experience":10, "taskOrder":12345, "phone": "234-234-4595" }},
+                            {"deviceID":4, "id":4, "isActive":true, "name":"#345345", "type":"Material", "metadata":{"assetClass": "Piping", "classification": "Piping", "details":"Black steel ASTM A53, Grade B, seamless, Schedule 40 with threaded ends", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}},
+                            {"deviceID":5, "id":5, "isActive":true, "name":"ID# 544", "type":"Vehicle", "metadata":{"assetClass": "Vehicle", "classification": "Forklift", "model":"H800-1050HDS", "inDate":"2015-04-23T18:25:43.511Z", "taskOrder":12345}}]}
+        return assets
 
-api.add_resource(HelloWorld, '/hello')
+class Buildings(Resource):
+    def get(self):
+        buildings = {"buildings":[{"id":1, "name":"Tengiz Field"}]}
+
+class Floors(Resource):
+    def get(self):
+        floors = {"floors":[{"id": 1, "buildingId":1, "floorIndex":1, "floorName":"Lay Down Yard", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                            {"id": 2, "buildingId":1, "floorIndex":2, "floorName":"Main Ops", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                            {"id": 3, "buildingId":1, "floorIndex":3, "floorName":"Drop Off Zones", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                            {"id": 4, "buildingId":1, "floorIndex":4, "floorName":"Gravel Base", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                            {"id": 5, "buildingId":1, "floorIndex":5, "floorName":"Office Building", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                            {"id": 5, "buildingId":1, "floorIndex":5, "floorName":"Rail Depo", "Oil&Gas_Zonesmap_050416_yard%20large.svg":"field", "origin":{"x":0, "y":0}, "scaleFactor":1},
+                        ]}
+        return floors
+
+api.add_resource(Assets, '/assets')
+api.add_resource(Buildings, '/buildings')
+api.add_resource(Floors, '/floors')
 
 
 @socketio.on('my event', namespace='/test')
