@@ -1,5 +1,12 @@
 #Example Socket Api
 
+
+OPTIONAL:</br>
+/ virtualenv venv </br>
+/ source venv/bin/activate
+
+
+APP START:</br>
 / pip install -r requirements.txt </br>
 / python app.py
 
